@@ -4,13 +4,14 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 from dotenv import load_dotenv
-load_dotenv()
 
+# Load environment variables
+load_dotenv()
 
 # ----------------------------------
 # PAGE CONFIG
 # ----------------------------------
-st.set_page_config(page_title="ReMemory  — Decode the Past", page_icon="🌍", layout="wide")
+st.set_page_config(page_title="ReMemory — Decode the Past", page_icon="🌍", layout="wide")
 
 CSS = """
 <style>
@@ -25,8 +26,9 @@ CSS = """
 }
 html, body, .stApp {background:var(--bg);}
 .rem-card{
-  background:var(--card);border-radius:14px;padding:18px;
+  background:var(--card);border-radius:14px;padding:22px;
   border:1px solid #E5E7EB;box-shadow:0 6px 14px rgba(0,0,0,0.04);
+  line-height:1.7; font-size:0.95rem;
 }
 h1,h2,h3{color:var(--ink);}
 .rem-tip{background:#E6F0FB;border-radius:12px;padding:12px;font-size:0.9rem;color:#1B4E9B;}
@@ -118,16 +120,38 @@ def load_contacts():
     return data
 
 
+# ----------------------------------
+# AI / PREPAREDNESS LOGIC
+# ----------------------------------
 def ai_preparedness_text(disaster, country, years=None, data_available=False):
-    """Adaptive preparedness summary."""
+    """Hybrid AI-enabled preparedness: uses OpenAI key if available."""
+    api_key = os.getenv("OPENAI_API_KEY")
     period = f" based on {years[0]}–{years[1]}" if years else ""
+
+    # If OpenAI API key exists, attempt AI summary
+    if api_key:
+        try:
+            from openai import OpenAI
+            client = OpenAI(api_key=api_key)
+            prompt = f"Provide disaster preparedness and early recovery guidance for {country} facing {disaster}s."
+            response = client.chat.completions.create(
+                model="gpt-4o-mini",
+                messages=[{"role": "user", "content": prompt}],
+                max_tokens=250
+            )
+            ai_text = response.choices[0].message.content.strip()
+            return f'<div class="rem-card"><b>AI-Generated Preparedness Brief for {country}</b><br><br>{ai_text}</div>'
+        except Exception:
+            pass  # fallback below
+
+    # Fallback static summary
     if data_available:
         header = f"<b>Preparedness & Early Recovery Brief for {disaster.lower()}s in {country}{period}</b>"
     else:
         header = f"<b>No historical EM-DAT records found for {country}. Here's how to stay prepared for {disaster.lower()}s:</b>"
 
     return f"""
-<div class="rem-card" style="line-height:1.7; font-size:0.96rem;">
+<div class="rem-card">
   <p>{header}</p>
   <ul style="margin-top:0.6rem;">
     <li>🧺 <b>Before:</b> Prepare emergency kits (water, meds, IDs, flashlights, chargers).</li>
@@ -145,13 +169,15 @@ def ai_preparedness_text(disaster, country, years=None, data_available=False):
 st.sidebar.markdown("### 💧 Choose Disaster & Location")
 
 all_csvs, all_countries = build_country_list()
-
 disaster = st.sidebar.selectbox("Disaster Type", ["Flood", "Hurricane", "Wildfire", "Drought", "Earthquake"])
 dataset = st.sidebar.selectbox("Dataset File", [f for f in all_csvs if disaster.lower() in f.lower()] or all_csvs)
 df = load_csv(dataset)
-
 country = st.sidebar.selectbox("Filter by Country", all_countries)
-st.sidebar.markdown('<div class="rem-tip">🌍 Powered by EM-DAT (2000–2025). Covering 100+ nations and 5 disaster types.</div>', unsafe_allow_html=True)
+
+st.sidebar.markdown(
+    '<div class="rem-tip">🌍 Powered by EM-DAT (2000–2025). Covering 100+ nations and 5 disaster types.</div>',
+    unsafe_allow_html=True,
+)
 
 # ----------------------------------
 # MAIN CONTENT
@@ -159,7 +185,7 @@ st.sidebar.markdown('<div class="rem-tip">🌍 Powered by EM-DAT (2000–2025). 
 if os.path.exists(LOGO_PATH):
     st.image(LOGO_PATH, width=90)
 
-st.markdown("## ReMemory : Decoding the Past to Protect the Future")
+st.markdown("## ReMemory — Decoding the Past to Protect the Future")
 st.caption("Built for Code the Past 2025 | Expanded for Build-a-thon 2025 — Education ✕ Green Tech ✕ Resilience")
 st.write("Using historical disaster data to uncover lessons that safeguard our future.")
 
@@ -233,4 +259,4 @@ if universal.get("cta"):
 st.markdown("</div>", unsafe_allow_html=True)
 
 st.markdown("---")
-st.caption("ReMemory EDU — Using the past to safeguard the future.")
+st.caption("ReMemory — Using the past to safeguard the future.")
