@@ -31,9 +31,24 @@ Built as an open classroom tool for courses in **geography, sustainability, data
 
 ---
 
-## ⚙️ Run Locally
+###🧭 How to Use
 
-### 1️⃣ Clone the repository
-```bash
-git clone https://github.com/CarolineNkan/rememory-edu.git
-cd rememory-edu
+Select a Disaster Type → choose Flood, Hurricane, Wildfire, Drought, or Earthquake.
+
+Pick a Dataset → EM-DAT CSVs are pre-cleaned under /data.
+
+Choose a Country → select from the full EM-DAT list.
+
+If no data exists, AI generates a localized preparedness plan.
+
+Explore Insights:
+
+Dataset Summary – key stats
+
+Impact Trends – interactive Plotly chart
+
+Preparedness Guide – AI recommendations
+
+Global Relief – verified emergency contacts + donation links
+
+
