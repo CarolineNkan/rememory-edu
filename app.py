@@ -10,7 +10,7 @@ load_dotenv()
 # ----------------------------------
 # PAGE CONFIG
 # ----------------------------------
-st.set_page_config(page_title="ReMemory EDU — Decode the Past", page_icon="🌍", layout="wide")
+st.set_page_config(page_title="ReMemory  — Decode the Past", page_icon="🌍", layout="wide")
 
 CSS = """
 <style>
