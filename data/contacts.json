@@ -1,0 +1,119 @@
+{
+  "Bangladesh": {
+    "emergency": "999 (National Emergency Services)",
+    "disaster_office": "Department of Disaster Management — [Official Site](https://www.ddm.gov.bd/)",
+    "insurance": {
+      "name": "Green Delta Insurance",
+      "url": "https://green-delta.com/"
+    },
+    "recovery": {
+      "name": "Bangladesh Red Crescent Society",
+      "url": "https://bdredcrescent.org/"
+    },
+    "donate": "https://donate.ifrc.org/appeal/bangladesh-floods"
+  },
+  "Jamaica": {
+    "emergency": "119 (Police/Fire/Ambulance)",
+    "disaster_office": "Office of Disaster Preparedness and Emergency Management (ODPEM) — [Official Site](https://www.odpem.org.jm/)",
+    "insurance": {
+      "name": "Guardian Life Jamaica",
+      "url": "https://www.guardianlife.com.jm/"
+    },
+    "recovery": {
+      "name": "Caribbean Disaster Emergency Management Agency (CDEMA)",
+      "url": "https://www.cdema.org/"
+    },
+    "donate": "https://donate.ifrc.org/appeal/caribbean-relief"
+  },
+  "Greece": {
+    "emergency": "112 (EU Emergency Number)",
+    "disaster_office": "Hellenic Fire Service — Civil Protection Directorate — [Official Site](https://civilprotection.gov.gr/)",
+    "insurance": {
+      "name": "Ethniki Insurance",
+      "url": "https://www.ethniki.gr/"
+    },
+    "recovery": {
+      "name": "Hellenic Red Cross",
+      "url": "https://www.redcross.gr/"
+    },
+    "donate": "https://www.ifrc.org/donate"
+  },
+  "Philippines": {
+    "emergency": "911 (National Emergency Hotline)",
+    "disaster_office": "National Disaster Risk Reduction and Management Council (NDRRMC) — [Official Site](https://ndrrmc.gov.ph/)",
+    "insurance": {
+      "name": "Philippine Crop Insurance Corporation",
+      "url": "https://pcic.gov.ph/"
+    },
+    "recovery": {
+      "name": "Philippine Red Cross",
+      "url": "https://redcross.org.ph/"
+    },
+    "donate": "https://donate.redcross.org.ph/"
+  },
+  "Sudan": {
+    "emergency": "999 (General Emergency Service)",
+    "disaster_office": "Sudan Civil Defence — [Government Info](https://www.humanitarianresponse.info/en/operations/sudan)",
+    "insurance": {
+      "name": "Islamic Insurance Company",
+      "url": "https://www.islamicinsurance.sd/"
+    },
+    "recovery": {
+      "name": "Sudanese Red Crescent",
+      "url": "https://www.ifrc.org/national-societies-directory/sudanese-red-crescent"
+    },
+    "donate": "https://crisisrelief.un.org/sudan-crisis"
+  },
+  "Kenya": {
+    "emergency": "999 / 112 (National Emergency Hotline)",
+    "disaster_office": "National Disaster Management Unit (NDMU) — [Official Site](https://interior.go.ke/ndmu/)",
+    "insurance": {
+      "name": "Jubilee Insurance Kenya",
+      "url": "https://jubileeinsurance.com/ke/"
+    },
+    "recovery": {
+      "name": "Kenya Red Cross",
+      "url": "https://www.redcross.or.ke/"
+    },
+    "donate": "https://www.redcross.or.ke/donate/"
+  },
+  "Japan": {
+    "emergency": "119 (Fire/Ambulance) / 110 (Police)",
+    "disaster_office": "Japan Meteorological Agency Disaster Information — [Official Site](https://www.jma.go.jp/jma/en/Activities/disaster.html)",
+    "insurance": {
+      "name": "Sompo Japan Insurance",
+      "url": "https://www.sompo-japan.co.jp/"
+    },
+    "recovery": {
+      "name": "Japanese Red Cross Society",
+      "url": "https://www.jrc.or.jp/english/"
+    },
+    "donate": "https://www.jrc.or.jp/english/donate/"
+  },
+  "United States of America": {
+    "emergency": "911 (Police/Fire/Ambulance)",
+    "disaster_office": "Federal Emergency Management Agency (FEMA) — [Official Site](https://www.fema.gov/)",
+    "insurance": {
+      "name": "National Flood Insurance Program (NFIP)",
+      "url": "https://www.floodsmart.gov/"
+    },
+    "recovery": {
+      "name": "American Red Cross",
+      "url": "https://www.redcross.org/"
+    },
+    "donate": "https://www.redcross.org/donate/donation.html/"
+  },
+  "Global": {
+    "emergency": "112 / 911 / 999 (Recognized globally)",
+    "disaster_office": "United Nations Office for Disaster Risk Reduction (UNDRR) — [Official Site](https://www.undrr.org/)",
+    "insurance": {
+      "name": "Global Catastrophe Insurance Pool (UNDRR)",
+      "url": "https://www.undrr.org/"
+    },
+    "recovery": {
+      "name": "International Federation of Red Cross and Red Crescent Societies (IFRC)",
+      "url": "https://www.ifrc.org/"
+    },
+    "donate": "https://www.ifrc.org/donate"
+  }
+}
