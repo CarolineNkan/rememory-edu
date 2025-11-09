@@ -124,25 +124,37 @@ def load_contacts():
 # AI / PREPAREDNESS LOGIC
 # ----------------------------------
 def ai_preparedness_text(disaster, country, years=None, data_available=False):
-    """Hybrid AI-enabled preparedness: uses OpenAI key if available."""
+    """Enhanced AI preparedness with structured guidance + safe fallback."""
     api_key = os.getenv("OPENAI_API_KEY")
     period = f" based on {years[0]}–{years[1]}" if years else ""
 
-    # If OpenAI API key exists, attempt AI summary
+    # Try AI mode if API key exists
     if api_key:
         try:
             from openai import OpenAI
             client = OpenAI(api_key=api_key)
-            prompt = f"Provide disaster preparedness and early recovery guidance for {country} facing {disaster}s."
+            prompt = f"""
+            You are ReMemory EDU, an AI disaster educator.
+            Generate a concise yet complete disaster preparedness and recovery guide for {country} facing {disaster}s.
+            Structure your response into 5 numbered sections with bold titles and clear, short bullet points under each:
+            1. Risk Assessment
+            2. Evacuation Plans
+            3. Emergency Communication
+            4. Community Engagement
+            5. Home Preparations
+
+            The tone should be educational, community-focused, and practical.
+            """
             response = client.chat.completions.create(
                 model="gpt-4o-mini",
                 messages=[{"role": "user", "content": prompt}],
-                max_tokens=250
+                max_tokens=600,
+                temperature=0.6
             )
             ai_text = response.choices[0].message.content.strip()
             return f'<div class="rem-card"><b>AI-Generated Preparedness Brief for {country}</b><br><br>{ai_text}</div>'
         except Exception:
-            pass  # fallback below
+            st.warning("⚠️ AI generation unavailable. Showing default preparedness guide.")
 
     # Fallback static summary
     if data_available:
@@ -162,6 +174,7 @@ def ai_preparedness_text(disaster, country, years=None, data_available=False):
   <p style="margin-top:0.8rem; font-style:italic;">Even when data is scarce, preparedness saves lives. 🌍</p>
 </div>
 """
+
 
 # ----------------------------------
 # SIDEBAR
@@ -260,3 +273,9 @@ st.markdown("</div>", unsafe_allow_html=True)
 
 st.markdown("---")
 st.caption("ReMemory — Using the past to safeguard the future.")
+
+
+      
+
+
+   
