@@ -159,7 +159,7 @@ st.sidebar.markdown('<div class="rem-tip">🌍 Powered by EM-DAT (2000–2025). 
 if os.path.exists(LOGO_PATH):
     st.image(LOGO_PATH, width=90)
 
-st.markdown("## ReMemory EDU: Decoding the Past to Protect the Future")
+st.markdown("## ReMemory : Decoding the Past to Protect the Future")
 st.caption("Built for Code the Past 2025 | Expanded for Build-a-thon 2025 — Education ✕ Green Tech ✕ Resilience")
 st.write("Using historical disaster data to uncover lessons that safeguard our future.")
 
