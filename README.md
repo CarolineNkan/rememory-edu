@@ -1,54 +1,44 @@
-# 🌍 ReMemory EDU — Data Forward, Humanity First
+# 🌍 ReMemory EDU — Decode the Past, Protect the Future
 
-### 🏫 Built for **Build-a-thon 2025**
-> *Theme – Education ✕ Automation ✕ Green Technology*
+### Built for:
+- 🕰️ **Code the Past Hackathon 2025**
+- 💡 **Build-a-thon 2025** *(Education ✕ Automation ✕ Green Tech)*
 
 ---
 
-## 💡 Project Overview
+## 🧠 Overview
 
-**ReMemory EDU** is a Streamlit-based educational dashboard that transforms **historical disaster data** into **interactive learning and preparedness insights**.
+**ReMemory EDU** transforms historical disaster data into *actionable learning and preparedness insights*.  
+It combines open EM-DAT datasets with AI-generated recovery guidance to help communities, educators, and students understand how the past can shape a safer future.
 
-It automates the process of reading open-source EM-DAT datasets, visualizing impact trends, and generating **AI-assisted preparedness guidance** when no records exist — ensuring that *every nation, regardless of data availability, receives life-saving information.*
-
-> *“Learning from the past to protect the future.”*
+> *“Using yesterday’s data to protect tomorrow.”*
 
 ---
 
 ## 🎯 Core Features
 
-### 📊 1 · Data-Driven Storytelling  
-View multi-year impact trends for **Floods, Hurricanes, Wildfires, Droughts, and Earthquakes** (2000–2025) through clear, interactive charts.
+### 🌀 1. Multi-Disaster Visualization  
+Analyze trends for **Floods, Hurricanes, Earthquakes, Droughts, and Wildfires** (2000–2025).  
+View how each disaster type has impacted different regions over time.
 
-### 🤖 2 · Smart Preparedness Assistant  
-When a country has no EM-DAT record, ReMemory automatically generates an AI-powered **preparedness and recovery guide** relevant to that disaster type.
+### 📈 2. Interactive Impact Charts  
+Visualize the number of people affected by each disaster, year by year, using **Plotly** charts.
 
-### 🧭 3 · Universal Relief Directory  
-Includes verified **WHO, IFRC, CARE, and UN OCHA** resources, global emergency numbers, and donation links for disaster-response organizations.
+### 🤖 3. AI-Generated Preparedness Guides  
+If no data exists for a selected country, ReMemory’s AI automatically creates a **general preparedness plan** — empowering global users even when data is scarce.
 
-### 🌐 4 · Educational Design  
-Built as an open classroom tool for courses in **geography, sustainability, data literacy, and humanitarian studies**.
+### 🌍 4. Global Relief & Recovery Network  
+Quick-access verified emergency contacts and donation resources (IFRC, UN OCHA, CARE, WHO).
+
+### 🧭 5. Educational Context  
+Designed as a teaching tool for **resilience education**, **climate awareness**, and **data-driven storytelling**.
 
 ---
 
-###🧭 How to Use
+## ⚙️ How to Run the App Locally
 
-Select a Disaster Type → choose Flood, Hurricane, Wildfire, Drought, or Earthquake.
+### 1️⃣ Clone the repository
 
-Pick a Dataset → EM-DAT CSVs are pre-cleaned under /data.
-
-Choose a Country → select from the full EM-DAT list.
-
-If no data exists, AI generates a localized preparedness plan.
-
-Explore Insights:
-
-Dataset Summary – key stats
-
-Impact Trends – interactive Plotly chart
-
-Preparedness Guide – AI recommendations
-
-Global Relief – verified emergency contacts + donation links
-
-
+```bash
+git clone https://github.com/CarolineNkan/rememory-edu.git
+cd rememory-edu
