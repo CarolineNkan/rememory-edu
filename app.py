@@ -8,9 +8,8 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
-# ----------------------------------
+
 # PAGE CONFIG
-# ----------------------------------
 st.set_page_config(page_title="ReMemory — Decode the Past", page_icon="🌍", layout="wide")
 
 CSS = """
@@ -41,9 +40,8 @@ st.markdown(CSS, unsafe_allow_html=True)
 DATA_DIR = "data"
 LOGO_PATH = "logo.png"
 
-# ----------------------------------
+
 # LOADERS
-# ----------------------------------
 @st.cache_data(show_spinner=False)
 def load_csv(filename):
     """Clean and normalize individual EM-DAT CSV files."""
@@ -120,9 +118,8 @@ def load_contacts():
     return data
 
 
-# ----------------------------------
+
 # AI / PREPAREDNESS LOGIC
-# ----------------------------------
 def ai_preparedness_text(disaster, country, years=None, data_available=False):
     """Enhanced AI preparedness with structured guidance + safe fallback."""
     api_key = os.getenv("OPENAI_API_KEY")
@@ -176,9 +173,7 @@ def ai_preparedness_text(disaster, country, years=None, data_available=False):
 """
 
 
-# ----------------------------------
 # SIDEBAR
-# ----------------------------------
 st.sidebar.markdown("### 💧 Choose Disaster & Location")
 
 all_csvs, all_countries = build_country_list()
@@ -192,9 +187,8 @@ st.sidebar.markdown(
     unsafe_allow_html=True,
 )
 
-# ----------------------------------
+
 # MAIN CONTENT
-# ----------------------------------
 if os.path.exists(LOGO_PATH):
     st.image(LOGO_PATH, width=90)
 
